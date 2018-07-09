@@ -13,7 +13,8 @@ class MenuController
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
     puts "4 - Import entries from a CSV"
-    puts "5 - Exit"
+    puts "5 - Obliterate all entries"
+    puts "6 - Exit"
     print "Enter your Selection: "
 
     selection = gets.to_i
@@ -36,6 +37,9 @@ class MenuController
         read_csv
         main_menu
       when 5
+        obliterate
+        main_menu
+      when 6
         puts "Good bye!"
         exit(0)
       else 
@@ -183,5 +187,10 @@ class MenuController
         puts "#{selection} is not a valid input"
         entry_submenu(entry)
     end
+  end
+
+  def obliterate
+    initialize
+    puts "All entries have been obliterated!"
   end
 end
